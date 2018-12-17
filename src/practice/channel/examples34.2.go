@@ -3,14 +3,14 @@ package main
 import (
 	"fmt"
 	"runtime"
+	"time"
 )
 
 func main() {
 	runtime.GOMAXPROCS(1)
 
-
-	done := make(chan bool, 3)
-	count := 6
+	done := make(chan bool, 2)
+	count := 4
 
 	go func() {
 		for i :=0; i < count; i++ {
@@ -20,8 +20,12 @@ func main() {
 	}()
 
 	for i := 0; i < count; i++ {
+		if i%2 == 0 {
+			time.Sleep(1 * time.Second)
+		}
 		<-done
 		fmt.Println("메인 : ", i)
 	}
 
+	fmt.Scanln()
 }
