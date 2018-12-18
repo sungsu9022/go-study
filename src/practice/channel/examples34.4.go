@@ -16,7 +16,7 @@ func main() {
 }
 
 func producer(c chan<- int) {
-	for i:=0; i < 5; i++ {
+	for i := 0; i < 5; i++ {
 		fmt.Println("producer :", i)
 		c <- i
 	}

@@ -9,7 +9,7 @@ func sum(a int, b int, c chan int) {
 func main() {
 	c := make(chan int)
 
-	go sum(1,2, c)
+	go sum(1, 2, c)
 
 	//n := <- c
 	//fmt.Println(n)

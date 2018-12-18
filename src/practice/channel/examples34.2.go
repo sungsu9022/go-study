@@ -13,7 +13,7 @@ func main() {
 	count := 4
 
 	go func() {
-		for i :=0; i < count; i++ {
+		for i := 0; i < count; i++ {
 			done <- true
 			fmt.Println("고루틴 : ", i)
 		}

@@ -11,9 +11,9 @@ func main() {
 	c := make(chan int)
 
 	go func() {
-		for i :=0; i<5; i++ {
+		for i := 0; i < 5; i++ {
 			c <- i
-			fmt.Println("c<-i",i)
+			fmt.Println("c<-i", i)
 		}
 		close(c)
 	}()
